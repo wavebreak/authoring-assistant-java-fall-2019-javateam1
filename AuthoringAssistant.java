@@ -18,31 +18,7 @@ public class AuthoringAssistant {
          System.out.println("Choose an option: ");
          input = scnr.next().charAt(0);
 
-      switch(input){
-         case 'c':
-            System.out.println("Number of non-whitespace characters: ");
-            break;
 
-         case 'w':
-            System.out.println( "Number of words: ");
-            break;
-
-         case 'f':
-            System.out.println("Enter a word or phrase to be found: ");
-            break;
-
-         case 'r':
-            System.out.println("Edited text: ");
-            break;
-
-         case 's':
-            System.out.println("Edited text: ");
-            break;
-
-         case 'q':
-            break;
-
-      }
       }
 
          /*cout << "MENU" << endl;
@@ -59,19 +35,44 @@ public class AuthoringAssistant {
       //return 0;
 
    }
-   
+
    public static void main(String[] args) {
       Scanner scnr = new Scanner(System.in);
       String userStr;
-      char menuOp = 'o';
+      char input;
 
       System.out.println("Enter a sample text:");
       userStr = scnr.nextLine();
-      System.out.println("You entered: " + userStr);
+      System.out.println("\nYou entered: " + userStr);
 
       do{
-         menuOp = printMenu();//FIXME: Make printMenu()
-      }while(menuOp != 'q');
+          input = printMenu();
+          switch(input) {
+              case 'c':
+                  System.out.println("Number of non-whitespace characters: ");
+                  break;
+
+              case 'w':
+                  System.out.println("Number of words: ");
+                  break;
+
+              case 'f':
+                  System.out.println("Enter a word or phrase to be found");
+                  findStr = scnr.nextLine();
+                  findText(findStr, userStr);
+                  break;
+
+              case 'r':
+                  System.out.println("Edited text: ");
+                  break;
+
+              case 's':
+                  System.out.println("Edited text: ");
+                  break;
+
+          }
+
+
+      }while(input != 'q');
    }
 }
-
