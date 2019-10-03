@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class AuthoringAssistant {
-
+   
    public static void main(String[] args) {
       Scanner scnr = new Scanner(System.in);
       String userStr;
@@ -12,7 +12,7 @@ public class AuthoringAssistant {
       System.out.println("You entered: " + userStr);
 
       do{
-         menuOp = ;//FIXME: Make printMenu()
+         menuOp = printMenu();//FIXME: Make printMenu()
       }while(menuOp != 'q');
    }
 }
