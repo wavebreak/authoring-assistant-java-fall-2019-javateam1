@@ -20,6 +20,33 @@ public class AuthoringAssistant {
 
      return input;
    }
+    private static void GetNumOfNonWSCharacters(String x){
+        int ws = 0;
+        char[]arr=x.toCharArray();
+        for (int i = 0; i < x.length(); i++){
+            if (!Character.isWhitespace(arr[i])){
+                ws++;
+
+            }
+
+        }
+        System.out.println("Number of non-whitespace characters: " + ws + "\n");
+
+
+    }
+    private static void getNumOfWords(String x){
+        int wrds = 1;
+        for (int i = 0; i < x.length()-1; i++){
+            if (x.charAt(i)==' ' && x.charAt(i+1) != ' '){
+                wrds++;
+
+            }
+
+        }
+        System.out.println("Number of words: " + wrds + "\n");
+
+
+    }
 
    //Define findText
    public static int findText (String findText, String userString){
@@ -61,11 +88,11 @@ public class AuthoringAssistant {
 
           switch(input) {
               case 'c':
-                  System.out.println("Number of non-whitespace characters: ");
+                  GetNumOfNonWSCharacters(userStr);
                   break;
 
               case 'w':
-                  System.out.println("Number of words: ");
+                  getNumOfWords(userStr);
                   break;
 
               case 'f':
