@@ -41,7 +41,6 @@ public class AuthoringAssistant {
            firstLetter = userString.indexOf(findText.charAt(0), firstLetter + 1);
        }
 
-
        return count;
    }
 
