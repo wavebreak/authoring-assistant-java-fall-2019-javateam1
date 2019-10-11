@@ -2,6 +2,25 @@ import java.util.Scanner;
 
 public class AuthoringAssistant {
    static Scanner scnr = new Scanner(System.in);
+   
+   public static String shortenSpace(String usrStr) {
+   String space = " ";
+   String space2 = space + space;
+
+   while (usrStr.indexOf(space2) != -1) {
+      usrStr=usrStr.replace(space2, space);
+   }
+   return usrStr;
+}
+
+ public static String replaceExclamation(String userStr){
+    String period = ".";
+    String exclamation = "!";
+    while (userStr.indexOf(period) !=-1) {
+        userStr = userStr.replace(period, exclamation);
+    }
+    return userStr;
+    }
 
    public static char printMenu(){
       char input;
@@ -102,11 +121,16 @@ public class AuthoringAssistant {
                   break;
 
               case 'r':
+                replaceExclamation(String userStr);
                   System.out.println("Edited text: ");
+                System.out.println(usrStr);
                   break;
 
               case 's':
+                shortenSpace(String usrStr)
                   System.out.println("Edited text: ");
+                System.out.println(usrStr);
+                
                   break;
 
               case 'q':
